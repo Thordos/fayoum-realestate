@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? ⁄ﬁ«—«  «·›ÌÊ„</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-white min-h-screen">
+    <!-- «·ÂÌœ— -->
+    <div id="header" class="bg-white shadow-sm p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="flex items-center text-blue-600 hover:text-blue-700 hidden">
+                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                «·⁄Êœ…
+            </button>
+            <h1 class="font-bold text-xl text-gray-800">?? ⁄ﬁ«—«  «·›ÌÊ„</h1>
+            <div class="w-16"></div>
+        </div>
+    </div>
+
+    <!-- «·„Õ ÊÏ «·—∆Ì”Ì -->
+    <div id="mainContent" class="p-4">
+        
+        <!-- ’›Õ… «Œ Ì«— ‰Ê⁄ «·⁄ﬁ«— -->
+        <div id="propertyTypePage" class="text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">„—Õ»« »ﬂ ›Ì ⁄ﬁ«—«  «·›ÌÊ„</h2>
+            <p class="text-gray-600 mb-8">«Œ — ‰Ê⁄ «·⁄ﬁ«— «·–Ì  »ÕÀ ⁄‰Â</p>
+            
+            <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
+                <button id="housesBtn" class="property-type-btn bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-transparent hover:border-blue-500">
+                    <div class="text-6xl mb-3">??</div>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">„‰«“· Ê‘ﬁﬁ</h3>
+                    <p class="text-gray-600">›··° ‘ﬁﬁ° Ê„‰«“· ··»Ì⁄</p>
+                </button>
+                
+                <button id="landsBtn" class="property-type-btn bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border-2 border-transparent hover:border-blue-500">
+                    <div class="text-6xl mb-3">??</div>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">√—«÷Ì</h3>
+                    <p class="text-gray-600">√—«÷Ì “—«⁄Ì… Ê··»‰«¡</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- ’›Õ… «Œ Ì«— «·„‰ÿﬁ… -->
+        <div id="areaPage" class="hidden">
+            <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">«Œ — «·„‰ÿﬁ… ›Ì „Õ«›Ÿ… «·›ÌÊ„</h2>
+            
+            <div id="areasGrid" class="grid grid-cols-2 gap-3">
+                <!-- ”Ì „ „·ƒÂ« »Ê«”ÿ… JavaScript -->
+            </div>
+        </div>
+
+        <!-- ’›Õ… ⁄—÷ «·⁄ﬁ«—«  -->
+        <div id="propertiesPage" class="hidden">
+            <div class="flex items-center justify-between mb-6">
+                <h2 id="propertiesTitle" class="text-xl font-bold text-gray-800"></h2>
+                <div id="propertiesCount" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"></div>
+            </div>
+            
+            <div id="propertiesList" class="space-y-4">
+                <!-- ”Ì „ „·ƒÂ« »Ê«”ÿ… JavaScript -->
+            </div>
+            
+            <div id="noProperties" class="text-center py-12 hidden">
+                <div class="text-6xl mb-4">??</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">·«  ÊÃœ ⁄ﬁ«—«  „ «Õ…</h3>
+                <p class="text-gray-600">·„ ‰Ãœ ⁄ﬁ«—«  ›Ì Â–Â «·„‰ÿﬁ… Õ«·Ì«</p>
+            </div>
+        </div>
+
+        <!-- ’›Õ…  ›«’Ì· «·⁄ﬁ«— -->
+        <div id="propertyDetailsPage" class="hidden">
+            <!-- ”Ì „ „·ƒÂ« »Ê«”ÿ… JavaScript -->
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
