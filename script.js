@@ -1,116 +1,116 @@
-// ãÊÛíÑÇÊ ÇáÊØÈíŞ
+// Ù…ØªØºÙŠØ±Ø§Øª Ø§Ù„ØªØ·Ø¨ÙŠÙ‚
 let currentStep = 'propertyType';
 let selectedType = '';
 let selectedArea = '';
 let favorites = [];
 
-// ÈíÇäÇÊ ÇáÚŞÇÑÇÊ
+// Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ø¹Ù‚Ø§Ø±Ø§Øª
 const properties = {
     houses: {
-        'ÇáÓæÇŞí': [
+        'Ø§Ù„Ø³ÙˆØ§Ù‚ÙŠ': [
             {
                 id: 1,
-                title: 'İíáÇ İÇÎÑÉ İí ÇáÓæÇŞí',
+                title: 'ÙÙŠÙ„Ø§ ÙØ§Ø®Ø±Ø© ÙÙŠ Ø§Ù„Ø³ÙˆØ§Ù‚ÙŠ',
                 price: 2500000,
                 area: 350,
                 rooms: 4,
                 bathrooms: 3,
-                description: 'İíáÇ ÍÏíËÉ ÈÊÔØíÈ ÓæÈÑ áæßÓ¡ ÍÏíŞÉ ÎÇÕÉ¡ ÌÑÇÌ áÓíÇÑÊíä',
+                description: 'ÙÙŠÙ„Ø§ Ø­Ø¯ÙŠØ«Ø© Ø¨ØªØ´Ø·ÙŠØ¨ Ø³ÙˆØ¨Ø± Ù„ÙˆÙƒØ³ØŒ Ø­Ø¯ÙŠÙ‚Ø© Ø®Ø§ØµØ©ØŒ Ø¬Ø±Ø§Ø¬ Ù„Ø³ÙŠØ§Ø±ØªÙŠÙ†',
                 images: ['https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400', 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400'],
                 contact: '01012345678',
-                features: ['ÍÏíŞÉ ÎÇÕÉ', 'ÌÑÇÌ', 'ãßíİ', 'Ããä æÍÑÇÓÉ']
+                features: ['Ø­Ø¯ÙŠÙ‚Ø© Ø®Ø§ØµØ©', 'Ø¬Ø±Ø§Ø¬', 'Ù…ÙƒÙŠÙ', 'Ø£Ù…Ù† ÙˆØ­Ø±Ø§Ø³Ø©']
             },
             {
                 id: 2,
-                title: 'ÔŞÉ ÚÇÆáíÉ ããíÒÉ',
+                title: 'Ø´Ù‚Ø© Ø¹Ø§Ø¦Ù„ÙŠØ© Ù…Ù…ÙŠØ²Ø©',
                 price: 850000,
                 area: 180,
                 rooms: 3,
                 bathrooms: 2,
-                description: 'ÔŞÉ æÇÓÚÉ İí ãæŞÚ åÇÏÆ¡ ŞÑíÈÉ ãä ÇáÎÏãÇÊ',
+                description: 'Ø´Ù‚Ø© ÙˆØ§Ø³Ø¹Ø© ÙÙŠ Ù…ÙˆÙ‚Ø¹ Ù‡Ø§Ø¯Ø¦ØŒ Ù‚Ø±ÙŠØ¨Ø© Ù…Ù† Ø§Ù„Ø®Ø¯Ù…Ø§Øª',
                 images: ['https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400'],
                 contact: '01087654321',
-                features: ['ÈáßæäÉ æÇÓÚÉ', 'ãØÈÎ ãÌåÒ', 'ŞÑíÈ ãä ÇáãÏÇÑÓ']
+                features: ['Ø¨Ù„ÙƒÙˆÙ†Ø© ÙˆØ§Ø³Ø¹Ø©', 'Ù…Ø·Ø¨Ø® Ù…Ø¬Ù‡Ø²', 'Ù‚Ø±ÙŠØ¨ Ù…Ù† Ø§Ù„Ù…Ø¯Ø§Ø±Ø³']
             }
         ],
-        'ßíãÇä İÇÑÓ': [
+        'ÙƒÙŠÙ…Ø§Ù† ÙØ§Ø±Ø³': [
             {
                 id: 3,
-                title: 'ÈíÊ ÔÚÈí ÃÕíá',
+                title: 'Ø¨ÙŠØª Ø´Ø¹Ø¨ÙŠ Ø£ØµÙŠÙ„',
                 price: 1200000,
                 area: 200,
                 rooms: 3,
                 bathrooms: 2,
-                description: 'ÈíÊ ÊÑÇËí ãÌÏÏ ÈÇáßÇãá¡ İí ŞáÈ ßíãÇä İÇÑÓ',
+                description: 'Ø¨ÙŠØª ØªØ±Ø§Ø«ÙŠ Ù…Ø¬Ø¯Ø¯ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ØŒ ÙÙŠ Ù‚Ù„Ø¨ ÙƒÙŠÙ…Ø§Ù† ÙØ§Ø±Ø³',
                 images: ['https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400'],
                 contact: '01098765432',
-                features: ['ØÑÇÒ ÊÑÇËí', 'ÍæÔ æÇÓÚ', 'ŞÑíÈ ãä ÇáÓæŞ']
+                features: ['Ø·Ø±Ø§Ø² ØªØ±Ø§Ø«ÙŠ', 'Ø­ÙˆØ´ ÙˆØ§Ø³Ø¹', 'Ù‚Ø±ÙŠØ¨ Ù…Ù† Ø§Ù„Ø³ÙˆÙ‚']
             }
         ],
-        'Çáİíæã ÇáãÏíäÉ': [
+        'Ø§Ù„ÙÙŠÙˆÙ… Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©': [
             {
                 id: 4,
-                title: 'ÔŞÉ ÍÏíËÉ æÓØ ÇáãÏíäÉ',
+                title: 'Ø´Ù‚Ø© Ø­Ø¯ÙŠØ«Ø© ÙˆØ³Ø· Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©',
                 price: 950000,
                 area: 140,
                 rooms: 2,
                 bathrooms: 1,
-                description: 'ÔŞÉ ÚãáíÉ İí ãæŞÚ Ííæí¡ ŞÑíÈÉ ãä ßá ÇáÎÏãÇÊ',
+                description: 'Ø´Ù‚Ø© Ø¹Ù…Ù„ÙŠØ© ÙÙŠ Ù…ÙˆÙ‚Ø¹ Ø­ÙŠÙˆÙŠØŒ Ù‚Ø±ÙŠØ¨Ø© Ù…Ù† ÙƒÙ„ Ø§Ù„Ø®Ø¯Ù…Ø§Øª',
                 images: ['https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400'],
                 contact: '01034567890',
-                features: ['ãæŞÚ Ííæí', 'ãæÇÕáÇÊ ãÊæİÑÉ', 'ÅØáÇáÉ ããíÒÉ']
+                features: ['Ù…ÙˆÙ‚Ø¹ Ø­ÙŠÙˆÙŠ', 'Ù…ÙˆØ§ØµÙ„Ø§Øª Ù…ØªÙˆÙØ±Ø©', 'Ø¥Ø·Ù„Ø§Ù„Ø© Ù…Ù…ÙŠØ²Ø©']
             }
         ]
     },
     lands: {
-        'ÇáÓæÇŞí': [
+        'Ø§Ù„Ø³ÙˆØ§Ù‚ÙŠ': [
             {
                 id: 5,
-                title: 'ÃÑÖ ÒÑÇÚíÉ ÎÕÈÉ',
+                title: 'Ø£Ø±Ø¶ Ø²Ø±Ø§Ø¹ÙŠØ© Ø®ØµØ¨Ø©',
                 price: 180000,
                 area: 2400,
-                description: 'ÃÑÖ ÒÑÇÚíÉ Úáì ÇáÊÑÚÉ¡ ÕÇáÍÉ áÌãíÚ ÇáãÍÇÕíá',
+                description: 'Ø£Ø±Ø¶ Ø²Ø±Ø§Ø¹ÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„ØªØ±Ø¹Ø©ØŒ ØµØ§Ù„Ø­Ø© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø­Ø§ØµÙŠÙ„',
                 images: ['https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400'],
                 contact: '01156789012',
-                features: ['Úáì ÇáÊÑÚÉ', 'ÊÑÈÉ ÎÕÈÉ', 'ÓäÏ ãáßíÉ']
+                features: ['Ø¹Ù„Ù‰ Ø§Ù„ØªØ±Ø¹Ø©', 'ØªØ±Ø¨Ø© Ø®ØµØ¨Ø©', 'Ø³Ù†Ø¯ Ù…Ù„ÙƒÙŠØ©']
             }
         ],
-        'ÃØÓÇ': [
+        'Ø£Ø·Ø³Ø§': [
             {
                 id: 6,
-                title: 'ÃÑÖ ááÇÓÊËãÇÑ',
+                title: 'Ø£Ø±Ø¶ Ù„Ù„Ø§Ø³ØªØ«Ù…Ø§Ø±',
                 price: 300000,
                 area: 1000,
-                description: 'ÃÑÖ ããíÒÉ ááÈäÇÁ Ãæ ÇáÇÓÊËãÇÑ İí ãäØŞÉ äÇãíÉ',
+                description: 'Ø£Ø±Ø¶ Ù…Ù…ÙŠØ²Ø© Ù„Ù„Ø¨Ù†Ø§Ø¡ Ø£Ùˆ Ø§Ù„Ø§Ø³ØªØ«Ù…Ø§Ø± ÙÙŠ Ù…Ù†Ø·Ù‚Ø© Ù†Ø§Ù…ÙŠØ©',
                 images: ['https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400'],
                 contact: '01123456789',
-                features: ['ãæŞÚ ÇÓÊÑÇÊíÌí', 'ŞÑíÈ ãä ÇáØÑíŞ ÇáÑÆíÓí', 'ßåÑÈÇÁ ãÊæİÑÉ']
+                features: ['Ù…ÙˆÙ‚Ø¹ Ø§Ø³ØªØ±Ø§ØªÙŠØ¬ÙŠ', 'Ù‚Ø±ÙŠØ¨ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ', 'ÙƒÙ‡Ø±Ø¨Ø§Ø¡ Ù…ØªÙˆÙØ±Ø©']
             }
         ],
-        'ØÇãíÉ': [
+        'Ø·Ø§Ù…ÙŠØ©': [
             {
                 id: 7,
-                title: 'ÃÑÖ ÒÑÇÚíÉ æÇÓÚÉ',
+                title: 'Ø£Ø±Ø¶ Ø²Ø±Ø§Ø¹ÙŠØ© ÙˆØ§Ø³Ø¹Ø©',
                 price: 450000,
                 area: 4200,
-                description: 'ÃÑÖ ÒÑÇÚíÉ ßÈíÑÉ ãäÇÓÈÉ ááãÔÇÑíÚ ÇáÒÑÇÚíÉ ÇáßÈíÑÉ',
+                description: 'Ø£Ø±Ø¶ Ø²Ø±Ø§Ø¹ÙŠØ© ÙƒØ¨ÙŠØ±Ø© Ù…Ù†Ø§Ø³Ø¨Ø© Ù„Ù„Ù…Ø´Ø§Ø±ÙŠØ¹ Ø§Ù„Ø²Ø±Ø§Ø¹ÙŠØ© Ø§Ù„ÙƒØ¨ÙŠØ±Ø©',
                 images: ['https://images.unsplash.com/photo-1574263867128-8a8d9b7c0b95?w=400'],
                 contact: '01098765433',
-                features: ['ãÓÇÍÉ ßÈíÑÉ', 'ãíÇå ÌæİíÉ', 'ØÑíŞ ãÑÕæİ']
+                features: ['Ù…Ø³Ø§Ø­Ø© ÙƒØ¨ÙŠØ±Ø©', 'Ù…ÙŠØ§Ù‡ Ø¬ÙˆÙÙŠØ©', 'Ø·Ø±ÙŠÙ‚ Ù…Ø±ØµÙˆÙ']
             }
         ]
     }
 };
 
-// ŞÇÆãÉ ÇáãäÇØŞ
-const areas = ['ÇáÓæÇŞí', 'ßíãÇä İÇÑÓ', 'Çáİíæã ÇáãÏíäÉ', 'ÃØÓÇ', 'ØÇãíÉ', 'ÓäæÑÓ', 'ÅÈÔæÇí', 'íæÓİ ÇáÕÏíŞ'];
+// Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ù…Ù†Ø§Ø·Ù‚
+const areas = ['Ø§Ù„Ø³ÙˆØ§Ù‚ÙŠ', 'ÙƒÙŠÙ…Ø§Ù† ÙØ§Ø±Ø³', 'Ø§Ù„ÙÙŠÙˆÙ… Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©', 'Ø£Ø·Ø³Ø§', 'Ø·Ø§Ù…ÙŠØ©', 'Ø³Ù†ÙˆØ±Ø³', 'Ø¥Ø¨Ø´ÙˆØ§ÙŠ', 'ÙŠÙˆØ³Ù Ø§Ù„ØµØ¯ÙŠÙ‚'];
 
-// ÏÇáÉ ÊäÓíŞ ÇáÃÓÚÇÑ
+// Ø¯Ø§Ù„Ø© ØªÙ†Ø³ÙŠÙ‚ Ø§Ù„Ø£Ø³Ø¹Ø§Ø±
 function formatPrice(price) {
-    return new Intl.NumberFormat('ar-EG').format(price) + ' Ìäíå';
+    return new Intl.NumberFormat('ar-EG').format(price) + ' Ø¬Ù†ÙŠÙ‡';
 }
 
-// ÏÇáÉ ÅÙåÇÑ/ÅÎİÇÁ ÇáÕİÍÇÊ
+// Ø¯Ø§Ù„Ø© Ø¥Ø¸Ù‡Ø§Ø±/Ø¥Ø®ÙØ§Ø¡ Ø§Ù„ØµÙØ­Ø§Øª
 function showPage(pageId) {
     const pages = ['propertyTypePage', 'areaPage', 'propertiesPage', 'propertyDetailsPage'];
     pages.forEach(page => {
@@ -120,7 +120,7 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.add('fade-in');
 }
 
-// ÏÇáÉ ÅÙåÇÑ/ÅÎİÇÁ ÒÑ ÇáÚæÏÉ
+// Ø¯Ø§Ù„Ø© Ø¥Ø¸Ù‡Ø§Ø±/Ø¥Ø®ÙØ§Ø¡ Ø²Ø± Ø§Ù„Ø¹ÙˆØ¯Ø©
 function toggleBackButton(show) {
     const backBtn = document.getElementById('backBtn');
     if (show) {
@@ -130,7 +130,7 @@ function toggleBackButton(show) {
     }
 }
 
-// ÏÇáÉ ÅäÔÇÁ ÈØÇŞÉ ÇáÚŞÇÑ
+// Ø¯Ø§Ù„Ø© Ø¥Ù†Ø´Ø§Ø¡ Ø¨Ø·Ø§Ù‚Ø© Ø§Ù„Ø¹Ù‚Ø§Ø±
 function createPropertyCard(property, type) {
     return `
         <div class="property-card">
@@ -138,27 +138,27 @@ function createPropertyCard(property, type) {
                 <img src="${property.images[0]}" alt="${property.title}" class="property-image">
                 <button onclick="toggleFavorite(${property.id})" 
                     class="absolute top-3 right-3 p-2 rounded-full ${favorites.includes(property.id) ? 'bg-red-500 text-white' : 'bg-white text-gray-600'}">
-                    ??
+                    â¤ï¸
                 </button>
             </div>
             
             <div class="property-content">
                 <h3 class="property-title">${property.title}</h3>
                 <div class="property-price">
-                    ?? ${formatPrice(property.price)}
+                    ğŸ’° ${formatPrice(property.price)}
                 </div>
                 
                 <div class="property-details">
                     <div class="property-detail">
-                        ?? ${property.area} ã²
+                        ğŸ“ ${property.area} Ù…Â²
                     </div>
                     ${type === 'houses' ? `
                         <div class="property-detail">
-                            ??? ${property.rooms} ÛÑİ
+                            ğŸ›ï¸ ${property.rooms} ØºØ±Ù
                         </div>
                         ${property.bathrooms ? `
                             <div class="property-detail">
-                                ?? ${property.bathrooms} ÍãÇã
+                                ğŸš¿ ${property.bathrooms} Ø­Ù…Ø§Ù…
                             </div>
                         ` : ''}
                     ` : ''}
@@ -168,10 +168,10 @@ function createPropertyCard(property, type) {
                 
                 <div class="property-actions">
                     <button onclick="showPropertyDetails(${property.id})" class="btn-primary">
-                        ÚÑÖ ÇáÊİÇÕíá
+                        Ø¹Ø±Ø¶ Ø§Ù„ØªÙØ§ØµÙŠÙ„
                     </button>
                     <button class="btn-secondary">
-                        ??
+                        ğŸ“¤
                     </button>
                 </div>
             </div>
@@ -179,7 +179,7 @@ function createPropertyCard(property, type) {
     `;
 }
 
-// ÏÇáÉ ÚÑÖ ÊİÇÕíá ÇáÚŞÇÑ
+// Ø¯Ø§Ù„Ø© Ø¹Ø±Ø¶ ØªÙØ§ØµÙŠÙ„ Ø§Ù„Ø¹Ù‚Ø§Ø±
 function showPropertyDetails(propertyId) {
     const property = findPropertyById(propertyId);
     if (!property) return;
@@ -188,69 +188,69 @@ function showPropertyDetails(propertyId) {
     detailsPage.innerHTML = `
         <div class="details-header">
             <button onclick="goBack()" class="flex items-center text-blue-600 hover:text-blue-700">
-                ? ÇáÚæÏÉ
+                â† Ø§Ù„Ø¹ÙˆØ¯Ø©
             </button>
-            <h1 class="font-bold text-lg">ÊİÇÕíá ÇáÚŞÇÑ</h1>
+            <h1 class="font-bold text-lg">ØªÙØ§ØµÙŠÙ„ Ø§Ù„Ø¹Ù‚Ø§Ø±</h1>
             <div class="flex gap-2">
                 <button onclick="toggleFavorite(${property.id})" class="p-2 text-gray-600 hover:text-red-500">
-                    ??
+                    â¤ï¸
                 </button>
                 <button class="p-2 text-gray-600 hover:text-blue-500">
-                    ??
+                    ğŸ“¤
                 </button>
             </div>
         </div>
 
         <div class="details-content">
-            <!-- ÕæÑ ÇáÚŞÇÑ -->
+            <!-- ØµÙˆØ± Ø§Ù„Ø¹Ù‚Ø§Ø± -->
             <div class="details-images">
                 <img src="${property.images[0]}" alt="${property.title}" class="main-image">
                 ${property.images.length > 1 ? `
                     <div class="thumbnail-images">
                         ${property.images.slice(1).map(img => `
-                            <img src="${img}" alt="ÕæÑÉ ÅÖÇİíÉ" class="thumbnail">
+                            <img src="${img}" alt="ØµÙˆØ±Ø© Ø¥Ø¶Ø§ÙÙŠØ©" class="thumbnail">
                         `).join('')}
                     </div>
                 ` : ''}
             </div>
 
-            <!-- ãÚáæãÇÊ ÃÓÇÓíÉ -->
+            <!-- Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø£Ø³Ø§Ø³ÙŠØ© -->
             <div class="info-card">
                 <h2 class="text-xl font-bold mb-3 text-gray-800">${property.title}</h2>
                 <div class="text-blue-600 font-bold text-2xl mb-4">
-                    ?? ${formatPrice(property.price)}
+                    ğŸ’° ${formatPrice(property.price)}
                 </div>
                 
                 <div class="info-grid">
                     <div class="info-item">
-                        ?? ÇáãÓÇÍÉ: ${property.area} ã²
+                        ğŸ“ Ø§Ù„Ù…Ø³Ø§Ø­Ø©: ${property.area} Ù…Â²
                     </div>
                     ${selectedType === 'houses' ? `
                         <div class="info-item">
-                            ??? ÇáÛÑİ: ${property.rooms}
+                            ğŸ›ï¸ Ø§Ù„ØºØ±Ù: ${property.rooms}
                         </div>
                         ${property.bathrooms ? `
                             <div class="info-item">
-                                ?? ÇáÍãÇãÇÊ: ${property.bathrooms}
+                                ğŸš¿ Ø§Ù„Ø­Ù…Ø§Ù…Ø§Øª: ${property.bathrooms}
                             </div>
                         ` : ''}
                     ` : ''}
                     <div class="info-item">
-                        ?? ${selectedArea}
+                        ğŸ“ ${selectedArea}
                     </div>
                 </div>
             </div>
 
-            <!-- ÇáæÕİ -->
+            <!-- Ø§Ù„ÙˆØµÙ -->
             <div class="info-card">
-                <h3 class="font-bold text-lg mb-3 text-gray-800">ÇáæÕİ</h3>
+                <h3 class="font-bold text-lg mb-3 text-gray-800">Ø§Ù„ÙˆØµÙ</h3>
                 <p class="text-gray-600 leading-relaxed">${property.description}</p>
             </div>
 
-            <!-- ÇáããíÒÇÊ -->
+            <!-- Ø§Ù„Ù…Ù…ÙŠØ²Ø§Øª -->
             ${property.features ? `
                 <div class="info-card">
-                    <h3 class="font-bold text-lg mb-3 text-gray-800">ÇáããíÒÇÊ</h3>
+                    <h3 class="font-bold text-lg mb-3 text-gray-800">Ø§Ù„Ù…Ù…ÙŠØ²Ø§Øª</h3>
                     <div class="features-grid">
                         ${property.features.map(feature => `
                             <div class="feature-item">
@@ -262,11 +262,11 @@ function showPropertyDetails(propertyId) {
                 </div>
             ` : ''}
 
-            <!-- ãÚáæãÇÊ ÇáÇÊÕÇá -->
+            <!-- Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø§Ù„Ø§ØªØµØ§Ù„ -->
             <div class="info-card">
-                <h3 class="font-bold text-lg mb-3 text-gray-800">ááÇÓÊİÓÇÑ</h3>
+                <h3 class="font-bold text-lg mb-3 text-gray-800">Ù„Ù„Ø§Ø³ØªÙØ³Ø§Ø±</h3>
                 <a href="tel:${property.contact}" class="contact-btn">
-                    ?? ÇÊÕá ÇáÂä: ${property.contact}
+                    ğŸ“ Ø§ØªØµÙ„ Ø§Ù„Ø¢Ù†: ${property.contact}
                 </a>
             </div>
         </div>
@@ -276,7 +276,7 @@ function showPropertyDetails(propertyId) {
     currentStep = 'details';
 }
 
-// ÏÇáÉ ÇáÈÍË Úä ÇáÚŞÇÑ ÈÇáÑŞã
+// Ø¯Ø§Ù„Ø© Ø§Ù„Ø¨Ø­Ø« Ø¹Ù† Ø§Ù„Ø¹Ù‚Ø§Ø± Ø¨Ø§Ù„Ø±Ù‚Ù…
 function findPropertyById(id) {
     for (let type in properties) {
         for (let area in properties[type]) {
@@ -287,7 +287,7 @@ function findPropertyById(id) {
     return null;
 }
 
-// ÏÇáÉ ÅÖÇİÉ/ÅÒÇáÉ ÇáãİÖáÉ
+// Ø¯Ø§Ù„Ø© Ø¥Ø¶Ø§ÙØ©/Ø¥Ø²Ø§Ù„Ø© Ø§Ù„Ù…ÙØ¶Ù„Ø©
 function toggleFavorite(propertyId) {
     if (favorites.includes(propertyId)) {
         favorites = favorites.filter(id => id !== propertyId);
@@ -296,7 +296,7 @@ function toggleFavorite(propertyId) {
     }
 }
 
-// ÏÇáÉ ÇáÚæÏÉ ááÎáİ
+// Ø¯Ø§Ù„Ø© Ø§Ù„Ø¹ÙˆØ¯Ø© Ù„Ù„Ø®Ù„Ù
 function goBack() {
     if (currentStep === 'details') {
         showPropertiesPage();
@@ -307,19 +307,19 @@ function goBack() {
     }
 }
 
-// ÏÇáÉ ÚÑÖ ÕİÍÉ äæÚ ÇáÚŞÇÑ
+// Ø¯Ø§Ù„Ø© Ø¹Ø±Ø¶ ØµÙØ­Ø© Ù†ÙˆØ¹ Ø§Ù„Ø¹Ù‚Ø§Ø±
 function showPropertyTypePage() {
     showPage('propertyTypePage');
     toggleBackButton(false);
     currentStep = 'propertyType';
 }
 
-// ÏÇáÉ ÚÑÖ ÕİÍÉ ÇáãäÇØŞ
+// Ø¯Ø§Ù„Ø© Ø¹Ø±Ø¶ ØµÙØ­Ø© Ø§Ù„Ù…Ù†Ø§Ø·Ù‚
 function showAreaPage() {
     const areasGrid = document.getElementById('areasGrid');
     areasGrid.innerHTML = areas.map(area => `
         <button onclick="selectArea('${area}')" class="area-btn">
-            ?? ${area}
+            ğŸ“ ${area}
         </button>
     `).join('');
     
@@ -328,18 +328,18 @@ function showAreaPage() {
     currentStep = 'area';
 }
 
-// ÏÇáÉ ÚÑÖ ÕİÍÉ ÇáÚŞÇÑÇÊ
+// Ø¯Ø§Ù„Ø© Ø¹Ø±Ø¶ ØµÙØ­Ø© Ø§Ù„Ø¹Ù‚Ø§Ø±Ø§Øª
 function showPropertiesPage() {
     const propertiesList = document.getElementById('propertiesList');
     const propertiesTitle = document.getElementById('propertiesTitle');
     const propertiesCount = document.getElementById('propertiesCount');
     const noProperties = document.getElementById('noProperties');
 
-    const typeText = selectedType === 'houses' ? 'ãäÇÒá' : 'ÃÑÇÖí';
+    const typeText = selectedType === 'houses' ? 'Ù…Ù†Ø§Ø²Ù„' : 'Ø£Ø±Ø§Ø¶ÙŠ';
     propertiesTitle.textContent = `${typeText} ${selectedArea}`;
 
     const areaProperties = properties[selectedType][selectedArea] || [];
-    propertiesCount.textContent = `${areaProperties.length} ÚŞÇÑ`;
+    propertiesCount.textContent = `${areaProperties.length} Ø¹Ù‚Ø§Ø±`;
 
     if (areaProperties.length > 0) {
         propertiesList.innerHTML = areaProperties.map(property => 
@@ -357,29 +357,29 @@ function showPropertiesPage() {
     currentStep = 'properties';
 }
 
-// ÏÇáÉ ÇÎÊíÇÑ äæÚ ÇáÚŞÇÑ
+// Ø¯Ø§Ù„Ø© Ø§Ø®ØªÙŠØ§Ø± Ù†ÙˆØ¹ Ø§Ù„Ø¹Ù‚Ø§Ø±
 function selectPropertyType(type) {
     selectedType = type;
     showAreaPage();
 }
 
-// ÏÇáÉ ÇÎÊíÇÑ ÇáãäØŞÉ
+// Ø¯Ø§Ù„Ø© Ø§Ø®ØªÙŠØ§Ø± Ø§Ù„Ù…Ù†Ø·Ù‚Ø©
 function selectArea(area) {
     selectedArea = area;
     showPropertiesPage();
 }
 
-// ÅÚÏÇÏ ÇáÃÍÏÇË ÚäÏ ÊÍãíá ÇáÕİÍÉ
+// Ø¥Ø¹Ø¯Ø§Ø¯ Ø§Ù„Ø£Ø­Ø¯Ø§Ø« Ø¹Ù†Ø¯ ØªØ­Ù…ÙŠÙ„ Ø§Ù„ØµÙØ­Ø©
 document.addEventListener('DOMContentLoaded', function() {
-    // ÃÍÏÇË ÃÒÑÇÑ äæÚ ÇáÚŞÇÑ
+    // Ø£Ø­Ø¯Ø§Ø« Ø£Ø²Ø±Ø§Ø± Ù†ÙˆØ¹ Ø§Ù„Ø¹Ù‚Ø§Ø±
     document.getElementById('housesBtn').addEventListener('click', () => selectPropertyType('houses'));
     document.getElementById('landsBtn').addEventListener('click', () => selectPropertyType('lands'));
     
-    // ÍÏË ÒÑ ÇáÚæÏÉ
+    // Ø­Ø¯Ø« Ø²Ø± Ø§Ù„Ø¹ÙˆØ¯Ø©
     document.getElementById('backBtn').addEventListener('click', goBack);
     
-    // ÚÑÖ ÇáÕİÍÉ ÇáÃæáì
+    // Ø¹Ø±Ø¶ Ø§Ù„ØµÙØ­Ø© Ø§Ù„Ø£ÙˆÙ„Ù‰
     showPropertyTypePage();
 });
 
-console.log('?? ÊØÈíŞ ÚŞÇÑÇÊ Çáİíæã ÌÇåÒ ááÇÓÊÎÏÇã!');
+console.log('ğŸ¡ ØªØ·Ø¨ÙŠÙ‚ Ø¹Ù‚Ø§Ø±Ø§Øª Ø§Ù„ÙÙŠÙˆÙ… Ø¬Ø§Ù‡Ø² Ù„Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù…!');
